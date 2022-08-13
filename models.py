@@ -8,8 +8,6 @@ from tensorflow.keras.models import Sequential, Model, load_model
 from tensorflow.keras.optimizers import Adam
 
 
-data = load_data()
-
 def build_descriminator(image_shape):
     model = Sequential()
 
@@ -66,7 +64,7 @@ def build_generator(seed_size, channels):
     model.add(BatchNormalization(momentum=0.8))
     model.add(Activation("relu"))
     
-    model.add(UpSampling2D(size=(2,2)))
+    model.add(UpSampling2D(size=(3,3)))
     model.add(Conv2D(128,kernel_size=3,padding="same"))
     model.add(BatchNormalization(momentum=0.8))
     model.add(Activation("relu"))
