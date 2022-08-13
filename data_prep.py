@@ -14,6 +14,9 @@ print("data_prep file executed")
 data_folder = "data"
 print(f"the current folder is : {os.getcwd()}")
 
+
+
+
 def prepare_all_images():
     files_list = os.listdir(data_folder)
     resolu = 2
@@ -36,6 +39,10 @@ def get_rand_pok():
     print(f"resolution of the image is : {im_arry.shape}")
     return im_arry
 
+def load_dataa() :
+    with open(join(data_folder,"training_data.pkl") , 'rb') as f :
+        data = pickle.load(f)
+    return data
 
 if __name__ == '__main__' :
     pass
